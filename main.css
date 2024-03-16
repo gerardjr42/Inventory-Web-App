@@ -1,0 +1,208 @@
+/* Default to border-box to adjust measurements within elements */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+header {
+  background: #03171F;
+  color: white;
+  padding: 35px;
+  width: 100vw;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* Set main to grid */
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  /* margin-top: 35px; */
+  margin: 35px 40px 0px 40px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+
+  height: 600px;
+  overflow: scroll;
+}
+/* Set grid column position for sections */
+.section-item {
+  display: flex;
+  margin-bottom: 20px;
+  padding-left: 50px;
+}
+
+/* Position images to right */
+.item-img {
+  display: flex;
+  justify-content: right;
+  /* margin-top: 35px; */
+}
+
+.item-info {
+  padding-left: 20px;
+}
+
+.section-form {
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.section-headers {
+  text-align: end;
+  font-size: 2.3rem;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+}
+
+.form-header {
+  width: 550px;
+}
+
+.item__title {
+  text-align: left;
+}
+
+/*Labels for buttons are needed for accessability, but we need to hide them. Only visible with screen readers  */
+.form-reset label,
+.form-submit label {
+  display: none;
+}
+
+/* Add border and fix aspect ratio */
+img {
+  border: 5px solid #00B5F1;
+  width: 170px;
+  height: 255px;
+}
+
+/* sizing of input text */
+.text {
+  width: 550px;
+  height: 25px;
+  margin: 5px 0px 10px 0px;
+}
+
+/* Add color to buttons */
+button {
+  border-radius: 5px;
+  padding: 10px 50px;
+  font-weight: bold;
+  border-style: none;
+}
+
+#remove {
+  background: #F53641;
+  color:white;
+  padding: 8px 15px;
+  margin-top: 15px;
+}
+
+.form-reset button {
+  background: #DCDCDC;
+  color: black;
+  margin-right: 10px;
+}
+
+.form-submit button {
+  background: #3DBAEF;
+  color: black;
+}
+
+.form-buttons {
+  display: flex;
+  margin-top: 20px;
+}
+
+/* Fix Fonts */
+h2 {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.75rem;
+  margin-top: 0;
+}
+
+h3 {
+  font-size: normal;
+  font-weight: 200;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+h4 {
+  display: inline;
+  font-size: 0.75rem;
+  background: #DCDCDC;
+  border-radius: 5px;
+  padding: 5px 7px;
+}
+
+/* Fixed hr width */
+/* #line {
+  display: inline-block;
+  width: fit-content;
+} */
+
+.error {
+  display: inline;
+  background: #F53641;
+  border-radius: 5px;
+  margin-right: 300px;
+  color: white;
+}
+
+li {
+  margin: 8px 0px;
+}
+
+
+/* media queries */
+
+/* Add media query for width <= 1300 */
+@media(max-width: 1200px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* grid-template-rows: 1fr 1fr; */
+  }
+
+  .container {
+    display: flex;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-form {
+    grid-column: 1/3;
+    grid-row: 2;
+    margin-top: 2;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media(max-width: 800px) {
+    .form-header {
+      width: 350px;
+      text-align: right;
+    }
+
+    .text {
+      width: 350px;
+    }
+  }
+}

@@ -8,6 +8,126 @@
   <title>Inventory Web App</title>
 </head>
 <body>
-  
-</body>
+  <header>
+    <h1>Bookstore Inventory</h1>
+  </header>
+    <main>
+      <section class="section-form">
+        <h1 class="form-header section-headers">Add New Book</h1><hr id="line">
+        <br>
+        <form>
+          <div class="form-name">
+            <label for="name">Name</label><br>
+            <input type="text" class="text" id="name" name="name" required>
+          </div>
+          <div class="form-author">
+            <label for="author">Author</label><br>
+            <input type="text" class="text" id="author" name="author" required>
+          </div>
+          <div class="form-imageURL">
+            <label for="imageURL">Image URL</label><br>
+            <input type="text" class="text" id="imageURL" name="imageURL" required>
+          </div>
+          <div class="form-price">
+            <label for="price">Price</label><br>
+            <input type="text" class="text" id="price" name="price" required placeholder="$">
+          </div>
+          <div class="form-InStock">
+            <label for="In-Stock">In Stock</label><br>
+            <select class="text" name="In-Stock" id="In-Stock">
+              <option value="default">--Select One--</option>
+              <option value="In Stock">Yes</option>
+              <option value="Out Of Stock">No</option>
+            </select>
+            <div class="form-buttons">
+            <div class="form-reset">
+              <label for="reset">Reset Button</label>
+              <button id="reset" name="reset">Reset</button>
+            </div>
+            <div class="form-submit">
+              <label for="submit">Submit Button</label>
+              <button id="submit" name="submit">Submit</button>
+            </div>
+            </div>
+          </div>
+        </form>
+        <!-- <ul class="error">
+          <li>Name must be 3 characters or more.</li>
+          <li>Author must be 3 characters or more.</li>
+          <li>Price must be greater than $1</li>
+          <li>In Stock cannot be blank</li>
+        </ul> -->
+      </section>
+      <!-- check if this works for dividing list -->
+      <div class="container">
+        <!-- <section class="section-item">
+          <div class="item-img">
+            <img src="https://books.google.com/books/publisher/content?id=dSq_EAAAQBAJ&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U1kwaq2V30kvaTZopxEOUaNDxL2ig&w=1280" alt="Book Title">
+          </div>
+          <div class="item-info">
+            <h1 class="item__title section-headers">Friday I'm in Love</h1>
+            <hr>
+            <h2 class="item__author">Camryn Garret</h2>
+            <h3 class="item__price">$18.99</h3>
+            <h4 class="item__stock">In Stock</h4>
+            <br>
+            <label for="remove"></label>
+            <button id="remove" name="remove">Remove</button>
+          </div>
+        </section>
+
+        <section class="section-item">
+        <div class="item-img">
+          <img src="https://books.google.com/books/publisher/content?id=SUwREAAAQBAJ&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U1KiQmxZUrVWDI3nO1UUBsZF9u44A&w=1280" alt="Book Title">
+        </div>
+        <div class="item-info">
+          <h1 class="item__title section-headers">Before We Disappear</h1>
+          <hr>
+          <h2 class="item__author">Shaun David Hutchinson</h2>
+          <h3 class="item__price">$17.99</h3>
+          <h4 class="item__stock">In Stock</h4>
+          <br>
+          <label for="remove"></label>
+          <button id="remove" name="remove">Remove</button>
+        </div>
+        </section>
+
+        <section class="section-item">
+          <div class="item-img">
+            <img src="https://books.google.com/books/publisher/content?id=LEuHEAAAQBAJ&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U04vweZYFl_cbbX8uhSyh41P3RXaw&w=1280" alt="Book Title">
+          </div>
+          <div class="item-info">
+            <h1 class="item__title section-headers">Station Eternity</h1>
+            <hr>
+            <h2 class="item__author">Mur Lafferty</h2>
+            <h3 class="item__price">$17.00</h3>
+            <h4 class="item__stock">In Stock</h4>
+            <br>
+            <label for="remove"></label>
+            <button id="remove" name="remove">Remove</button>
+          </div>
+        </section>
+
+        <section class="section-item">
+          <div class="item-img">
+            <img src="https://books.google.com/books/publisher/content?id=-hmtDwAAQBAJ&pg=PP1&img=1&zoom=3&hl=en&bul=1&sig=ACfU3U3Kqtk6F5Mh_c6RmWsq5MRYDMkbFQ&w=1280" alt="Book Title">
+          </div>
+          <div class="item-info">
+            <h1 class="item__title section-headers">Dune</h1>
+            <hr>
+            <h2 class="item__author">Frank Herbert</h2>
+            <h3 class="item__price">$17.99</h3>
+            <h4 class="item__stock">Out Of Stock</h4>
+            <br>
+            <label for="remove"></label>
+            <button id="remove" name="remove">Remove</button>
+          </div>
+        </section> -->
+
+
+      </div>
+    </main>
+  </body>
 </html>
+
+<!-- For listing items, make it yes or no. Yes to update the listed item to inventory and no means to create a new list for that item -->
