@@ -46,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const reset = $("#reset");
   const submit = $("#submit");
   const container = $(".container");
-
   const sectionForm = $(".section-form");
 
   form.on("submit", (event) => {
@@ -56,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     section.className = "section-item";
     section.innerHTML = `
       <div class="item-img">
-        <img src="" alt="Book Title" class="item__img">
+        <img src="" alt="Book Title" class="item-img">
       </div>
       <div class="item-info">
         <h1 class="item__title section-headers"></h1>
@@ -79,6 +78,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const ul = create("ul");
     ul.className = "error";
     sectionForm.appendChild(ul);
+
+    //Append section to container
+    container.appendChild(section)
 
     //Add Errors for each text box
     if (name.value.length < 3) {
@@ -114,26 +116,15 @@ document.addEventListener("DOMContentLoaded", () => {
         h4.innerText = stock.value;
       }
 
-      if(imgURL.value === "") {
-        const li = create("li");
-        li.textContent = "Image URL is Blank"
-      } else {
+      if(imgURL.value.startsWith("http")) {
         img.src = imgURL.value;
+      } else {
+        const li = create("li");
+        li.textContent = "URL path does not exist";
       }
-      
-    //Append section to container
-    container.appendChild(section);
+  });
 
-
+  addGlobalEventListener("click", "#remove", e => {
+    e.target.parentNode.remove();
   })
-
-  // Fix below
-  //Reset button will reset form
-  // addGlobalEventListener("click", reset, ()=> {
-  //   form.reset();
-  // })
-
-
-  //Reset's form after submission
-  form.reset();
 });

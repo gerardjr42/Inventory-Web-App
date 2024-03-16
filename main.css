@@ -31,7 +31,6 @@ main {
   display: flex;
   flex-direction: column;
   margin-left: 80px;
-
   height: 600px;
   overflow: scroll;
 }
@@ -46,7 +45,6 @@ main {
 .item-img {
   display: flex;
   justify-content: right;
-  /* margin-top: 35px; */
 }
 
 .item-info {
@@ -154,7 +152,7 @@ h4 {
 /* Fixed hr width */
 /* #line {
   display: inline-block;
-  width: fit-content;
+  width: 900px;
 } */
 
 .error {
