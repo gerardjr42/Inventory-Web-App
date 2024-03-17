@@ -132,10 +132,17 @@ document.addEventListener("DOMContentLoaded", () => {
         ul.append(li);
         section.remove();
       }
+      form.reset();
   });
 
   addGlobalEventListener("click", "#remove", e => {
     e.target.parentNode.parentNode.remove();
   });
-  
+
+  reset.addEventListener("click", (e) => {
+    ul.innerHTML = "";
+    ul.style.display = "none";
+    form.reset();
+  })
+
 });
