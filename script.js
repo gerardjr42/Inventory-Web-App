@@ -1,5 +1,4 @@
 //---------------------------------Setting DOM and variables------------------------------------//
-document.addEventListener("DOMContentLoaded", () => {
   //Created own variables
     const $ = function(args) {
       return document.querySelector(args);
@@ -48,6 +47,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = $(".container");
   const sectionForm = $(".section-form");
 
+  const ul = create("ul");
+  ul.className = "error";
+  sectionForm.appendChild(ul);
+
   form.on("submit", (event) => {
     event.preventDefault();
 
@@ -73,17 +76,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const h2 = section.$(".item__author");
     const h3 = section.$(".item__price");
     const h4 = section.$(".item__stock");
-    const img = section.$(".item__src");
-
-    const ul = create("ul");
-    ul.className = "error";
-    sectionForm.appendChild(ul);
+    const img = section.$(".item__src"); 
 
     //Append section to container, below appends to end
     // container.appendChild(section);
 
     //Append section to container, below appends to start
     container.insertBefore(section, container.firstChild);
+
+
+    //Reset innerHTML from ul for each error submission
+    ul.innerHTML = "";
+
 
     //Add Errors for each text box
     if (name.value.length < 3) {
@@ -133,6 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
         section.remove();
       }
       form.reset();
+      ul.inner
   });
 
   addGlobalEventListener("click", "#remove", e => {
@@ -143,6 +148,4 @@ document.addEventListener("DOMContentLoaded", () => {
     ul.innerHTML = "";
     ul.style.display = "none";
     form.reset();
-  })
-
-});
+  });
