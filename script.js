@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
       h2.innerText = author.value;
     }
 
-    if(price.value < 1) {
+    if(isNaN(price.value) || price.value < 1){
       const li = create("li");
       li.textContent = "Price must be greater than $1";
       ul.appendChild(li);
@@ -136,5 +136,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   addGlobalEventListener("click", "#remove", e => {
     e.target.parentNode.parentNode.remove();
-  })
+  });
+  
 });
