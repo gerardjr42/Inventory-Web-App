@@ -55,11 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
     section.className = "section-item";
     section.innerHTML = `
       <div class="item-img">
-        <img src="" alt="Book Title" class="item-img">
+        <img src="" alt="Book Title" class="item__src">
       </div>
       <div class="item-info">
         <h1 class="item__title section-headers"></h1>
-        <hr>
+        <hr class="item__line">
         <h2 class="item__author"></h2>
         <h3 class="item__price"></h3>
         <h4 class="item__stock"></h4>
@@ -73,20 +73,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const h2 = section.$(".item__author");
     const h3 = section.$(".item__price");
     const h4 = section.$(".item__stock");
-    const img = section.$(".item__img");
+    const img = section.$(".item__src");
 
     const ul = create("ul");
     ul.className = "error";
     sectionForm.appendChild(ul);
 
-    //Append section to container
-    container.appendChild(section)
+    //Append section to container, below appends to end
+    // container.appendChild(section);
+
+    //Append section to container, below appends to start
+    container.insertBefore(section, container.firstChild);
 
     //Add Errors for each text box
     if (name.value.length < 3) {
       const li = create("li");
       li.textContent = "Name must be more than 3 characters";
       ul.appendChild(li);
+      section.remove();
     } else {
       h1.innerText = name.value;
     }
@@ -95,6 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const li = create("li");
       li.textContent = "Author must be more than 3 characters";
       ul.appendChild(li);
+      section.remove();
     } else {
       h2.innerText = author.value;
     }
@@ -103,6 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const li = create("li");
       li.textContent = "Price must be greater than $1";
       ul.appendChild(li);
+      section.remove();
     } else {
       h3.innerText = `$${price.value}`;
     }
@@ -112,19 +118,23 @@ document.addEventListener("DOMContentLoaded", () => {
       const li = create("li");
       li.textContent = "In Stock cannot be blank";
       ul.appendChild(li);
+      section.remove();
       } else {
         h4.innerText = stock.value;
       }
+
 
       if(imgURL.value.startsWith("http")) {
         img.src = imgURL.value;
       } else {
         const li = create("li");
         li.textContent = "URL path does not exist";
+        ul.append(li);
+        section.remove();
       }
   });
 
   addGlobalEventListener("click", "#remove", e => {
-    e.target.parentNode.remove();
+    e.target.parentNode.parentNode.remove();
   })
 });
