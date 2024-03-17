@@ -171,11 +171,17 @@ li {
 /* Add lines and adjust width */
 .item__line {
   width: 350px;
+  border: none;
+  height: 2.5px;
+  background-color: #CCCCCC;
 }
 
 .line {
   width: 560px;
   margin-right: 300px;
+  border: none;
+  height: 2.5px;
+  background-color: #CCCCCC;
 }
 
 
